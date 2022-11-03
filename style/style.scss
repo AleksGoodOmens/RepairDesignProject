@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One:regular);
+//! Colors
+
+$color-text-yellow: #e3b873;
+$color-text-white: #fff;
+$color-text-grey: #595959;
+
+//! screen sizes
+$mobileDevice: 375px;
+$tabletDevice: 912px;
+body {
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    line-height: 180%;
+    margin: 0;
+    padding: 0;
+    color: $color-text-white;
+    // color: $color-text-white;
+}
+ul,
+li h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+//! General styles
+.wrapper {
+}
+.wrapper1256 {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrapper1171 {
+    max-width: 1171px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrapper1236 {
+    max-width: 1236px;
+    margin: 0 auto;
+}
+.main {
+}
+.page-title {
+    text-transform: uppercase;
+    color: $color-text-yellow;
+    font-size: 1.928571428571429rem;
+    font-family: "Yeseva One";
+    // .page__title
+}
+.card-title {
+    text-transform: uppercase;
+    color: $color-text-yellow;
+    font-size: 1.285714285714286em;
+    font-family: "Yeseva One";
+}
+.text13 {
+    font-size: 0.9285714285714286rem;
+}
+.-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+//*  */
+
+//! Project
+.projects {
+    background: #131313;
+    padding: 100px 0;
+}
+.projects-body {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 3.472%;
+    // .projects-body__item
+
+    &__item {
+        flex: 1;
+    }
+}
+.item-project-left {
+    flex: 1 0 38%;
+    min-width: 340px;
+    @media (max-width: $mobileDevice) {
+        min-width: auto;
+    }
+    // .item-project-left__text
+    &__title {
+        margin: 15.742% 0 2.428rem 0;
+        max-width: 253px;
+        line-height: 138.6%;
+    }
+    &__text {
+        margin-bottom: 10%;
+    }
+
+    // .item-project-left__cards
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4285em;
+        justify-content: space-between;
+        margin-bottom: 19%;
+    }
+
+    // .item-project-left__card
+
+    &__card {
+        flex: 1 0 45%;
+    }
+}
+
+.slider-controls {
+    display: flex;
+    gap: 2rem;
+    line-height: 100%;
+    max-width: fit-content;
+    @media (max-width: $tabletDevice) {
+        margin: 0 auto;
+    }
+
+    // .slider-controls__prevBtn
+
+    &__prevBtn {
+        cursor: pointer;
+    }
+
+    // .slider-controls__bullets
+
+    &__bullets {
+        color: $color-text-grey;
+    }
+
+    // .slider-controls__bullet
+
+    &__bullet {
+        width: 0.7142rem;
+        height: 0.7142rem;
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        background-color: $color-text-grey;
+        border-radius: 50%;
+        font-size: 0;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-text-white;
+        }
+    }
+
+    // .slider-controls__nextBtn
+
+    &__nextBtn {
+        cursor: pointer;
+    }
+}
+.item-project-slider {
+    // .item-project-slider__img
+    flex: 1 0 58%;
+
+    &__img {
+        position: relative;
+        padding-bottom: 71%;
+    }
+}
+.item-project-slide {
+    // .item-project-slide__tabs
+
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 4.285em;
+        row-gap: 1em;
+        margin-bottom: 6.627%;
+        font-family: "Yeseva One";
+    }
+
+    // .item-project-slide__tab
+
+    &__tab {
+        text-transform: uppercase;
+        color: $color-text-grey;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+            color: $color-text-yellow;
+            border-bottom: 1px solid $color-text-yellow;
+        }
+    }
+}
+.active-tab {
+    display: block;
+    color: $color-text-yellow;
+    border-bottom: 1px solid $color-text-yellow;
+}
+.active-img {
+    display: block;
+}
+.active-bullet {
+    background-color: $color-text-white;
+}
+.disabled-img {
+    display: none;
+}

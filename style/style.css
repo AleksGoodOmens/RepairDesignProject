@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One:regular);
+body {
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  line-height: 180%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+ul,
+li h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper1256 {
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper1171 {
+  max-width: 1171px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper1236 {
+  max-width: 1236px;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-transform: uppercase;
+  color: #e3b873;
+  font-size: 1.9285714286rem;
+  font-family: "Yeseva One";
+}
+
+.card-title {
+  text-transform: uppercase;
+  color: #e3b873;
+  font-size: 1.2857142857em;
+  font-family: "Yeseva One";
+}
+
+.text13 {
+  font-size: 0.9285714286rem;
+}
+
+.-ibg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.projects {
+  background: #131313;
+  padding: 100px 0;
+}
+
+.projects-body {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 3.472%;
+}
+.projects-body__item {
+  flex: 1;
+}
+
+.item-project-left {
+  flex: 1 0 38%;
+  min-width: 340px;
+}
+@media (max-width: 375px) {
+  .item-project-left {
+    min-width: auto;
+  }
+}
+.item-project-left__title {
+  margin: 15.742% 0 2.428rem 0;
+  max-width: 253px;
+  line-height: 138.6%;
+}
+.item-project-left__text {
+  margin-bottom: 10%;
+}
+.item-project-left__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4285em;
+  justify-content: space-between;
+  margin-bottom: 19%;
+}
+.item-project-left__card {
+  flex: 1 0 45%;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 2rem;
+  line-height: 100%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+@media (max-width: 912px) {
+  .slider-controls {
+    margin: 0 auto;
+  }
+}
+.slider-controls__prevBtn {
+  cursor: pointer;
+}
+.slider-controls__bullets {
+  color: #595959;
+}
+.slider-controls__bullet {
+  width: 0.7142rem;
+  height: 0.7142rem;
+  display: inline-block;
+  background-color: #595959;
+  border-radius: 50%;
+  font-size: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.slider-controls__bullet:not(:last-child) {
+  margin-right: 1rem;
+}
+.slider-controls__bullet:hover {
+  background-color: #fff;
+}
+.slider-controls__nextBtn {
+  cursor: pointer;
+}
+
+.item-project-slider {
+  flex: 1 0 58%;
+}
+.item-project-slider__img {
+  position: relative;
+  padding-bottom: 71%;
+}
+
+.item-project-slide__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 4.285em;
+       column-gap: 4.285em;
+  row-gap: 1em;
+  margin-bottom: 6.627%;
+  font-family: "Yeseva One";
+}
+.item-project-slide__tab {
+  text-transform: uppercase;
+  color: #595959;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.item-project-slide__tab:hover {
+  color: #e3b873;
+  border-bottom: 1px solid #e3b873;
+}
+
+.active-tab {
+  display: block;
+  color: #e3b873;
+  border-bottom: 1px solid #e3b873;
+}
+
+.active-img {
+  display: block;
+}
+
+.active-bullet {
+  background-color: #fff;
+}
+
+.disabled-img {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
