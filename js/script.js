@@ -1,4 +1,7 @@
+"use strict";
 window.addEventListener('DOMContentLoaded', () => {
+
+    //! slider project
     const slides = document.querySelectorAll('.item-project-slider__img'),
         tabs = document.querySelectorAll('.item-project-slide__tab'),
         bullets = document.querySelectorAll('.slider-controls__bullet'),
@@ -50,23 +53,89 @@ window.addEventListener('DOMContentLoaded', () => {
         slideIndex = n + 1;
 
     }
-    prevBtn.addEventListener('click', () => {
-        plusSlides(-1);
-    });
-    nextBtn.addEventListener('click', () => {
-        plusSlides(1);
-    });
-    bullets.forEach((bullet, i) => {
-        bullet.addEventListener('click', () => {
-            changeSlide(i);
+    if (slides.length > 1) {
+        console.log(slides);
+        prevBtn.addEventListener('click', () => {
+            plusSlides(-1);
         });
-    });
-    tabs.forEach((tab, i) => {
-        tab.addEventListener('click', () => {
-            changeSlide(i);
+        nextBtn.addEventListener('click', () => {
+            plusSlides(1);
+        });
+        bullets.forEach((bullet, i) => {
+            bullet.addEventListener('click', () => {
+                changeSlide(i);
+            });
+        });
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => {
+                changeSlide(i);
 
+            });
         });
-    })
+    }
+
+    //! slider 
+    const fantasiesSlides = document.querySelectorAll('.item-fantasies-slider__slide'),
+        fantasiesTabs = document.querySelectorAll('.item-fantasies-left__li');
+
+
+
+    fantasiesTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            displaySlides(index);
+            addClass(tab, 'active-slide');
+        });
+    });
+
+    function displaySlides(n) {
+        // 
+        fantasiesTabs.forEach(element => {
+            removeClass(element, 'active-slide');
+        });
+
+        fantasiesSlides.forEach(slide => {
+            removeClass(slide, 'active-slide');
+            removeClass(slide, 'big-slide');
+            removeClass(slide, 'transformTranslate');
+        });
+        let slidesAmount;
+        if (n == 0) {
+            slidesAmount = 3;
+            for (let i = 0; i < 4; i++) {
+                addClass(fantasiesSlides[slidesAmount], 'active-slide');
+
+                if (i % 2 > 0) {
+                    addClass(fantasiesSlides[slidesAmount], 'big-slide');
+                }
+                if (i == 1 || i == 2) {
+                    addClass(fantasiesSlides[slidesAmount], 'transformTranslate');
+                }
+                slidesAmount--;
+            }
+        } else if (n > 0) {
+            slidesAmount = (n + 1) * 4 - 1;
+            console.log(slidesAmount);
+            for (let i = 0; i < 4; i++) {
+                addClass(fantasiesSlides[slidesAmount], 'active-slide');
+                if (i % 2 > 0) {
+                    addClass(fantasiesSlides[slidesAmount], 'big-slide');
+                }
+                if (i == 1 || i == 2) {
+                    addClass(fantasiesSlides[slidesAmount], 'transformTranslate');
+                }
+                console.log(window.getComputedStyle(fantasiesSlides[slidesAmount]));
+                slidesAmount--;
+            }
+        }
+
+    }
+
+    function removeClass(element, className) {
+        element.classList.remove(className);
+    }
+    function addClass(elem, className) {
+        elem.classList.add(className);
+    }
 
 
 }); 

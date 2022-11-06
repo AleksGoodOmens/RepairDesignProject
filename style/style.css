@@ -9,6 +9,10 @@ body {
   color: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ul,
 li h1,
 h2,
@@ -34,14 +38,15 @@ p {
 }
 
 .wrapper1236 {
-  max-width: 1236px;
+  max-width: 1266px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .page-title {
   text-transform: uppercase;
   color: #e3b873;
-  font-size: 1.9285714286rem;
+  font-size: 1.9285714286em;
   font-family: "Yeseva One";
 }
 
@@ -53,13 +58,15 @@ p {
 }
 
 .text13 {
-  font-size: 0.9285714286rem;
+  font-size: 0.9285714286em;
 }
 
 .-ibg {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -90,7 +97,7 @@ p {
   }
 }
 .item-project-left__title {
-  margin: 15.742% 0 2.428rem 0;
+  margin: 15.742% 0 1.259em 0;
   max-width: 253px;
   line-height: 138.6%;
 }
@@ -110,7 +117,7 @@ p {
 
 .slider-controls {
   display: flex;
-  gap: 2rem;
+  gap: 2em;
   line-height: 100%;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -191,4 +198,170 @@ p {
 
 .disabled-img {
   display: none;
+}
+
+.fantasies {
+  position: relative;
+  padding: 0 15px;
+}
+.fantasies__bg {
+  display: none;
+}
+
+.item-fantasies-left__title {
+  font-size: 1.5714em;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+  max-width: 250px;
+}
+.item-fantasies-left__ul {
+  display: none;
+}
+.item-fantasies-slider {
+  display: flex;
+  position: relative;
+}
+.item-fantasies-slider__slide {
+  padding-bottom: 71.1764%;
+  width: 100%;
+  display: none;
+}
+.item-fantasies-slider__prevBtn, .item-fantasies-slider__nextBtn {
+  position: absolute;
+  background-color: #e3b873;
+  border-radius: 50%;
+  width: 2.57em;
+  height: 2.57em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.item-fantasies-slider__prevBtn {
+  left: 1em;
+}
+.item-fantasies-slider__nextBtn {
+  right: 1em;
+}
+
+.active-slide {
+  display: block;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+@media (min-width: 912px) {
+  .fantasies {
+    padding: 100px 0;
+    overflow: hidden;
+  }
+  .fantasies__wrapper {
+    position: relative;
+    max-height: 864px;
+  }
+  .fantasies__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 -15px;
+  }
+  .fantasies__bg::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(109.8deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  .fantasies-body {
+    display: flex;
+  }
+  .fantasies-body__item {
+    position: relative;
+    flex: 1 0 50%;
+  }
+  .item-fantasies-left {
+    flex: 1 0 29%;
+    align-self: baseline;
+    padding-top: 10%;
+  }
+  .item-fantasies-left__title {
+    font-size: 1.9285em;
+    text-align: start;
+    line-height: 120%;
+    max-width: 300px;
+    margin: 0;
+    margin-bottom: 1.5em;
+    align-self: flex-start;
+  }
+  .item-fantasies-left__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7857em;
+  }
+  .item-fantasies-left__li {
+    font-size: 1.4285em;
+    border-bottom: 1px solid transparent;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    cursor: pointer;
+    transition: border-bottom 0.2s ease-out;
+  }
+  .item-fantasies-left__li:hover {
+    border-bottom: 1px solid #e3b873;
+    color: #e3b873;
+  }
+  .item-fantasies-left__li::first-letter {
+    text-transform: capitalize;
+  }
+  .item-fantasies-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
+  .item-fantasies-slider__slide {
+    display: block;
+    flex: 0 1 556px;
+    position: relative;
+    padding: 0;
+    opacity: 0;
+  }
+  .item-fantasies-slider__slide:nth-child(odd) {
+    flex: 0 1 349px;
+  }
+  .item-fantasies-slider__prevBtn {
+    display: none;
+  }
+  .item-fantasies-slider__nextBtn {
+    display: none;
+  }
+  .reverse-slider {
+    display: flex;
+    gap: 40px;
+    margin: -40px 0;
+  }
+  .reverse-slider__toTop {
+    flex: 1 0 auto;
+    flex-direction: column-reverse;
+  }
+  .reverse-slider__toBottom {
+    flex: 1 0 auto;
+    transform: translateY(-150px);
+  }
+  .active-slide {
+    opacity: 1;
+    color: #e3b873;
+    border-bottom: 1px solid #e3b873;
+  }
 }/*# sourceMappingURL=style.css.map */

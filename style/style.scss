@@ -18,6 +18,9 @@ body {
     color: $color-text-white;
     // color: $color-text-white;
 }
+* {
+    box-sizing: border-box;
+}
 ul,
 li h1,
 h2,
@@ -44,15 +47,16 @@ p {
     padding: 0 15px;
 }
 .wrapper1236 {
-    max-width: 1236px;
+    max-width: 1266px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .main {
 }
 .page-title {
     text-transform: uppercase;
     color: $color-text-yellow;
-    font-size: 1.928571428571429rem;
+    font-size: 1.928571428571429em;
     font-family: "Yeseva One";
     // .page__title
 }
@@ -63,12 +67,14 @@ p {
     font-family: "Yeseva One";
 }
 .text13 {
-    font-size: 0.9285714285714286rem;
+    font-size: 0.9285714285714286em;
 }
 .-ibg {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     object-fit: cover;
     object-position: center;
 }
@@ -97,7 +103,7 @@ p {
     }
     // .item-project-left__text
     &__title {
-        margin: 15.742% 0 2.428rem 0;
+        margin: 15.742% 0 1.259em 0;
         max-width: 253px;
         line-height: 138.6%;
     }
@@ -124,7 +130,7 @@ p {
 
 .slider-controls {
     display: flex;
-    gap: 2rem;
+    gap: 2em;
     line-height: 100%;
     max-width: fit-content;
     @media (max-width: $tabletDevice) {
@@ -216,4 +222,225 @@ p {
 }
 .disabled-img {
     display: none;
+}
+
+//! fantasies
+
+.fantasies {
+    position: relative;
+    padding: 0 15px;
+    &__bg {
+        display: none;
+    }
+}
+.fantasies-body {
+    // .fantasies-body__item
+
+    &__item {
+    }
+}
+.item-fantasies-left {
+    // .item-fantasies-left__title
+
+    &__title {
+        font-size: 1.5714em;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1.5em;
+        max-width: 250px;
+    }
+
+    // .item-fantasies-left__ul
+
+    &__ul {
+        display: none;
+    }
+
+    // .item-fantasies-left__header
+
+    // .item-fantasies-left__li
+
+    &__li {
+    }
+}
+
+.item-fantasies-slider {
+    // .item-fantasies-slider__slide
+    display: flex;
+    position: relative;
+    // transform: translatey(-10%);
+
+    &__slide {
+        padding-bottom: 71.1764%;
+        width: 100%;
+        display: none;
+    }
+
+    // .item-fantasies-slider__prevBtn
+
+    &__prevBtn,
+    &__nextBtn {
+        position: absolute;
+        background-color: $color-text-yellow;
+        border-radius: 50%;
+        width: 2.57em;
+        height: 2.57em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__prevBtn {
+        left: 1em;
+    }
+    &__nextBtn {
+        right: 1em;
+    }
+}
+.active-slide {
+    display: block;
+}
+.overflow {
+    overflow: hidden;
+}
+///*  */  media //!
+
+@media (min-width: $tabletDevice) {
+    .fantasies {
+        padding: 100px 0;
+        overflow: hidden;
+
+        &__wrapper {
+            position: relative;
+            max-height: 864px;
+        }
+        // padding: 10em 15px 8em 15px;
+        &__bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 -15px;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: linear-gradient(109.8deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%);
+            }
+        }
+    }
+    .fantasies-body {
+        display: flex;
+
+        // .fantasies-body__item
+
+        &__item {
+            position: relative;
+            flex: 1 0 50%;
+        }
+    }
+    .item-fantasies-left {
+        flex: 1 0 29%;
+        align-self: baseline;
+        padding-top: 10%;
+        // .item-fantasies-left__title
+
+        &__title {
+            font-size: 1.9285em;
+            text-align: start;
+            line-height: 120%;
+            max-width: 300px;
+            margin: 0;
+            margin-bottom: 1.5em;
+            align-self: flex-start;
+        }
+
+        // .item-fantasies-left__ul
+
+        &__ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.7857em;
+        }
+
+        // .item-fantasies-left__header
+
+        // .item-fantasies-left__li
+
+        &__li {
+            font-size: 1.4285em;
+            border-bottom: 1px solid transparent;
+            max-width: fit-content;
+            cursor: pointer;
+            transition: border-bottom 0.2s ease-out;
+
+            &:hover {
+                border-bottom: 1px solid $color-text-yellow;
+                color: $color-text-yellow;
+            }
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .item-fantasies-slider {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-height: max-content;
+        // .item-fantasies-slider__slide
+
+        &__slide {
+            display: block;
+            flex: 0 1 556px;
+            position: relative;
+            padding: 0;
+            opacity: 0;
+            &:nth-child(odd) {
+                flex: 0 1 349px;
+            }
+        }
+
+        // .item-fantasies-slider__prevBtn
+
+        &__prevBtn {
+            display: none;
+        }
+
+        // .item-fantasies-slider__nextBtn
+
+        &__nextBtn {
+            display: none;
+        }
+    }
+
+    .reverse-slider {
+        display: flex;
+        gap: 40px;
+        margin: -40px 0;
+        // .reverse-slider__toTop
+
+        &__toTop {
+            flex: 1 0 auto;
+            flex-direction: column-reverse;
+        }
+
+        // .reverse-slider__toBottom
+
+        &__toBottom {
+            flex: 1 0 auto;
+            transform: translateY(-150px);
+        }
+    }
+    .active-slide {
+        opacity: 1;
+        color: $color-text-yellow;
+        border-bottom: 1px solid $color-text-yellow;
+    }
 }
