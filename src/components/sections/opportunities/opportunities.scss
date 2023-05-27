@@ -1,0 +1,121 @@
+@import "../../../modules//helpers/helpers";
+.opportunities {
+	display: none;
+	@include md {
+		display: block;
+		padding-bottom: 130px;
+	}
+	// .opportunities__container
+
+	&__bg {
+		max-width: 1440px;
+		margin: 0 auto;
+		background: url("./img/bg.jpg") left -100px / contain no-repeat;
+	}
+	&__container {
+		display: grid;
+		grid-template: auto / repeat(2, 1fr);
+		gap: 40px;
+
+		@include lg {
+			gap: 40px 200px;
+		}
+	}
+
+	// .opportunities__item
+
+	&__item {
+		&:first-child {
+			@include lg {
+				padding-left: 130px;
+			}
+		}
+		.form {
+			background: var(--color-bg);
+			padding: 28px 40px;
+			display: flex;
+			flex-direction: column;
+			gap: 48px;
+			&__inputs {
+			}
+			&__label {
+				color: rgba(255, 255, 255, 0.5);
+			}
+			&__input {
+				background-color: transparent;
+				color: var(--color-primary);
+				&::placeholder {
+					color: var(--color-primary);
+				}
+			}
+			.checkbox {
+				margin-top: -40px;
+				order: 4;
+				color: rgba(255, 255, 255, 0.5);
+			}
+			button {
+				order: 5;
+				justify-self: flex-end;
+				align-self: flex-end;
+			}
+		}
+	}
+	&__title {
+		color: var(--color-primary);
+		text-align: center;
+		max-width: 240px;
+		margin: 0 auto;
+		font-weight: normal;
+		font-size: 18px;
+	}
+
+	// .opportunities__list
+
+	&__list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+	&__list-item {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		font-size: 14px;
+	}
+
+	// .opportunities__item-number
+
+	&__item-number {
+		flex: 0 0 42px;
+		font-size: 18px;
+		height: 42px;
+		place-items: center;
+		background-color: var(--color-accent);
+		border-radius: 50%;
+		color: var(--color-primary);
+		text-align: center;
+		line-height: 42px;
+		font-family: "Yaseva One";
+		box-shadow: 0 0 0px 10px var(--color-primary);
+	}
+
+	// .opportunities__pig
+
+	&__pig {
+		grid-column-start: 2;
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		font-size: 18px;
+	}
+
+	// .opportunities__pig-icon
+
+	&__pig-icon {
+		background-color: var(--color-accent);
+		border-radius: 50%;
+		padding: 20px;
+	}
+}

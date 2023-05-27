@@ -1,0 +1,48 @@
+@import "../../../modules/helpers/helpers";
+.control {
+	&__wrapper {
+		background: linear-gradient(180deg, var(--color-bg) 50%, var(--color-primary) 50%);
+		padding: 30px 0;
+	}
+	&__text {
+		font-size: 18px;
+		padding-top: 30px;
+		color: var(--color-bg);
+		max-width: 681px;
+		margin: 0 auto 90px auto;
+		text-align: center;
+	}
+
+	.form {
+		display: flex;
+		margin: 0 auto;
+		max-width: 817px;
+		align-items: center;
+		gap: 50px;
+		flex-wrap: wrap;
+		justify-content: center;
+		&__inputs {
+			flex: 1 0 33%;
+		}
+		button {
+			order: +1;
+		}
+
+		@include sm {
+			button {
+				order: unset;
+			}
+		}
+	}
+	.bg-primary {
+		padding-bottom: 130px;
+	}
+}
+.video-wrapper {
+	aspect-ratio: 16/9;
+	box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+	@include md {
+		max-width: 817px;
+		margin: 0 auto;
+	}
+}

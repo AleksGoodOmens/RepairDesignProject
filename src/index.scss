@@ -1,0 +1,92 @@
+@import "./modules/helpers/helpers";
+
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:regular,italic);
+@import "./components/UI/buttons/Button.scss";
+
+:root {
+	--color-bg: #121212;
+	--color-primary: #fff;
+	--color-accent: #e3b873;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Nunito Sans", sans-serif;
+	font-size: 11px;
+	color: var(--color-primary);
+	background-color: var(--color-bg);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.bg-primary {
+	background-color: var(--color-primary);
+}
+.container {
+	padding: 0 15px;
+	position: relative;
+	@include xl {
+		max-width: 1236px;
+		margin: 0 auto;
+	}
+}
+.page__header {
+	position: fixed;
+	width: 100%;
+	background-color: var(--color-bg);
+	z-index: 100;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Yaseva One";
+}
+.d-grid {
+	display: grid;
+}
+.g-t-c3 {
+	grid-template-columns: repeat(2, 1fr);
+	@include lg {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.g50 {
+	gap: 25px;
+	@include md {
+		gap: 50px;
+	}
+}
+.divider {
+	width: 1px;
+	background-color: var(--color-primary);
+	align-self: stretch;
+}
+.textUpperCase {
+	text-transform: uppercase;
+}
+.p15 {
+	padding: 15px;
+}
+.br50 {
+	border-radius: 50%;
+}
+.App {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	main {
+		flex: 1;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

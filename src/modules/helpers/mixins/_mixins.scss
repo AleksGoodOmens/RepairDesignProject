@@ -1,0 +1,79 @@
+// Small devices
+@mixin xsm {
+	@media (min-width: #{$screen-xsm-min}) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (min-width: #{$screen-sm-min}) {
+		@content;
+	}
+}
+
+// Medium devices
+@mixin md {
+	@media (min-width: #{$screen-md-min}) {
+		@content;
+	}
+}
+
+// Large devices
+@mixin lg {
+	@media (min-width: #{$screen-lg-min}) {
+		@content;
+	}
+}
+
+// Extra large devices
+@mixin xl {
+	@media (min-width: #{$screen-xl-min}) {
+		@content;
+	}
+}
+
+@mixin arrows {
+	.arrowPrev,
+	.arrowNext {
+		position: absolute;
+		width: 36px;
+		background-color: var(--color-accent);
+		border-radius: 50%;
+		aspect-ratio: 1;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			width: 10px;
+			height: 2px;
+			background-color: var(--color-primary);
+			position: absolute;
+			top: 50%;
+			left: 25%;
+			display: block;
+		}
+		@include md {
+			display: none;
+		}
+	}
+	.arrowPrev {
+		left: 15px;
+		&::before {
+			transform: rotate(-45deg) translate(4px);
+		}
+		&::after {
+			transform: rotate(45deg) translate(4px);
+		}
+	}
+	.arrowNext {
+		right: 15px;
+		transform: rotate(180deg) translateY(50%);
+		&::before {
+			transform: rotate(-45deg) translate(4px);
+		}
+		&::after {
+			transform: rotate(45deg) translate(4px);
+		}
+	}
+}

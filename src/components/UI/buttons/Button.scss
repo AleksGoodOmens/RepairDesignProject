@@ -1,0 +1,18 @@
+@import "../../../modules/helpers/functions/functions";
+.button {
+	background-color: var(--color-accent);
+	font-style: italic;
+	padding: rem(13) rem(32);
+	text-transform: capitalize;
+	border: 1px solid transparent;
+	color: var(--color-primary);
+	border-radius: 4px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s;
+	&:hover {
+		background-color: transparent;
+		color: var(--color-accent);
+		border-color: var(--color-accent);
+	}
+}

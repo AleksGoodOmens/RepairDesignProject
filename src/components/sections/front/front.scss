@@ -1,0 +1,65 @@
+@import "../../../modules//helpers/helpers";
+.front {
+	background: url("./img/bg-small.jpg") center / cover no-repeat;
+	min-height: 100vh;
+	padding-top: 150px;
+	@include sm {
+		background-image: url("./img/bg-big.jpg");
+		padding: 160px 0 240px 0;
+		min-height: 0;
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		max-width: 520px;
+		gap: rem(32);
+	}
+
+	&__title {
+		font-family: "Yeseva One";
+		font-size: rem(22);
+		line-height: 130%;
+		text-transform: uppercase;
+		font-weight: normal;
+		span {
+			color: var(--color-accent);
+		}
+
+		@include xsm {
+			font-size: rem(25);
+		}
+		@include sm {
+			font-size: rem(40);
+		}
+	}
+	&__subtitle {
+		font-size: rem(14);
+		@include xsm {
+			font-size: rem(18);
+		}
+		@include sm {
+			font-size: rem(22);
+		}
+	}
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		gap: rem(26);
+		@include sm {
+			flex-direction: row;
+			button {
+				flex: 0 0 208px;
+				padding: 13px 20px;
+			}
+		}
+
+		button {
+			font-size: rem(11);
+			&:last-child {
+				border-color: var(--color-primary);
+				color: var(--color-primary);
+				background-color: transparent;
+			}
+		}
+	}
+}
