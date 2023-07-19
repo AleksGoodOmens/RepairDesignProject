@@ -24,7 +24,6 @@ function Form({ children, buttonText = "submit", email = false, question=false }
 
 	const handleChange = (e) => {
 		const { name, value, type, checked } = e.target;
-		console.log(checked)
 
 		const newValue = type === 'checkbox' ? checked : value;
 

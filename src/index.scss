@@ -6,6 +6,7 @@
 
 :root {
 	--color-bg: #121212;
+	--color-bg-light: hsla(0, 0%, 7%, 0.9);
 	--color-primary: #fff;
 	--color-accent: #e3b873;
 }
@@ -20,7 +21,9 @@ body {
 	color: var(--color-primary);
 	background-color: var(--color-bg);
 }
-
+.overflow {
+	overflow: hidden;
+}
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

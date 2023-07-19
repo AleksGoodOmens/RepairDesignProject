@@ -3,11 +3,10 @@ import {  Outlet, } from "react-router-dom";
 import { NavLink, Link } from "react-router-dom"
 
 import "./navigation.scss"
-import modalStyles from "./modal.module.scss"
 
 import Button from '../UI/buttons/Button';
 import Burger from '../burger/Burger';
-import Form from "../Form/Form"
+import Modal from '../modals/Modal';
 
 
 
@@ -22,21 +21,21 @@ function Navigation() {
 
 	const { logo, links, telephone, modal } = data;
 	const openModal = () => {
-console.log(windowWidth)
 		document.body.style.overflow = "hidden";
 		setData({
 			...data,
 			modal:true
 		})
 	}
-	const closeModal = () => {
+	const closeModal = (e) => {
 		document.body.style.overflow = "";
-	// console.log(getComputedStyle(windowWidth))
-
-		setData({
-			...data,
-			modal:false
-		})
+		if (e.getAttribute("data-Close")) {
+			setData({
+				...data,
+				modal:false
+			})
+		} 
+		
 	}
 
 	return (
@@ -73,15 +72,7 @@ console.log(windowWidth)
         </div>
       </footer>
 
-			{modal ? <article className={modalStyles.modal}>
-				<div className={modalStyles.modal__body}>
-					<button onClick={closeModal} className={modalStyles.btn__close}>X</button>
-					<Form>
-						<h2>Leave your mobile and we are call you!</h2>
-					</Form>
-	
-				</div>
-			</article> : ''}
+			{modal ? <Modal closeModal={closeModal}/> : ''}
 	</>
 	)
 }
